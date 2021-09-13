@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div id="myForm">
+
+</div>
+
+
+<table class = "table table-dark">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody id="my_posts">
+    <% @posts.each do |p| %>
+      <%= render 'posts', p: p %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Post', new_post_path, remote: true %>

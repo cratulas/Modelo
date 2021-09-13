@@ -1,0 +1,6 @@
+<tr id="post_<%= p.id %>">
+  <td><%= best_in_place p, :title %></td> 
+  <td><%= best_in_place p, :content %></td>
+  <td><%= link_to 'Eliminar', p, data: {confirm: 'Seguro?'}, method: :delete, remote: true %></td>
+  <td><%= link_to 'Editar', edit_post_path(p.id), remote: true %></td>
+</tr>

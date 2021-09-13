@@ -1,0 +1,26 @@
+<%= form_with(model: post) do |f| %>
+  <% if post.errors.any? %>
+    <div id = 'error_explanation'>
+      <h2>Este post no se pudo crear por las siguientes razones</h2>
+      <ul>
+        <% post.errors.full_messages.each do |msg|%>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+
+  <div class = 'actions'>
+    <%= f.submit data: { disable_with: 'Creado...' } %>
+  </div>
+<% end %>
